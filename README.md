@@ -38,18 +38,80 @@ Borrow out = A'Bin + A'B + BBin
 
 **Truthtable**
 
+i)FULL ADDER
+
+![Screenshot 2024-12-16 082822](https://github.com/user-attachments/assets/1102029e-01cd-4b53-93e0-9cc72046d0e3)
+
+ii)FULL SUBTRACTOR
+
+
+![Screenshot 2024-12-16 082827](https://github.com/user-attachments/assets/a472e3d6-34ae-4f36-8cd1-4c4a4d5eac24)
+
 **Procedure**
 
-Write the detailed procedure here
+1.Type the program in Quartus software.
+
+2.Compile and run the program.
+
+3.Generate the RTL schematic and save the logic diagram.
+
+4.Create nodes for inputs and outputs to generate the timing diagram.
+
+5.For different input combinations generate the timing diagram.
 
 **Program:**
 
-/* Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
+/* Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming.
+
+Developed by:vishwa v
+
+RegisterNumber:24901061
+
 */
 
-**RTL Schematic**
+```
+i)FULL ADDER
 
-**Output Timing Waveform**
+module fa(a,b,cin,sum,carry);
+input a,b,cin;
+output sum,carry;
+assign sum=( (a ^ b)^cin);
+assign carry= ( (a & b)| ( cin &(a ^ b )));
+endmodule
+
+ii)FULL SUBTRACTOR
+
+module fs(a,b,bin,difference,borrow);
+input a,b,bin;
+output difference,borrow;
+assign difference= ( (a ^ b)^bin);
+assign borrow= ( ( ~a & b)| ( bin & (~(a ^ b ))));
+endmodule
+```
+
+**RTL**
+
+i)FULL ADDER
+
+![Screenshot 2024-12-16 082838](https://github.com/user-attachments/assets/0c89329e-143c-4d11-9508-74272b8079aa)
+
+ii)FULL SUBTRACTOR
+
+
+![Screenshot 2024-12-16 082850](https://github.com/user-attachments/assets/adcbc76a-dbb4-4f7f-b9f2-2b35dcbab68b)
+
+**Output**
+
+i)FULL ADDER
+
+
+![Screenshot 2024-12-16 082911](https://github.com/user-attachments/assets/8c8d2ecb-9263-4c7c-b72a-627dfe7840a3)
+
+ii)FULL SUBTRACTOR
+
+
+![Screenshot 2024-12-16 082928](https://github.com/user-attachments/assets/7fb48ec2-bfb0-4f0e-90dd-f0b094b38954)
+
 
 **Result:**
 
